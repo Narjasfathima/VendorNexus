@@ -97,7 +97,8 @@ API Endpoints
         Endpoint: /api/purchase_orders/
         
         Data:JSON 
-          {"vendor": 0,"order_date": "2023-12-02T14:28:05.814Z","delivery_date": "2023-12-02T14:28:05.814Z","items": "string", "quantity": 0,"status": "string","quality_rating": 0,
+          {"vendor": 0,"order_date": "2023-12-02T14:28:05.814Z","delivery_date": "2023-12-02T14:28:05.814Z",
+          "items": "string", "quantity": 0,"status": "string","quality_rating": 0,
           "issue_date": "2023-12-02T14:28:05.814Z", "acknowledgment_date": "2023-12-02T14:28:05.814Z"}
           
     b)  Method: GET (List all purchase orders)
@@ -117,7 +118,8 @@ API Endpoints
         Endpoint: /api/purchase_orders/{id}/
         
         Data:JSON 
-          {"vendor": 0,"order_date": "2023-12-02T14:28:05.814Z","delivery_date": "2023-12-02T14:28:05.814Z","items": "string", "quantity": 0,"status": "string","quality_rating": 0,
+          {"vendor": 0,"order_date": "2023-12-02T14:28:05.814Z","delivery_date": "2023-12-02T14:28:05.814Z",
+          "items": "string", "quantity": 0,"status": "string","quality_rating": 0,
           "issue_date": "2023-12-02T14:28:05.814Z", "acknowledgment_date": "2023-12-02T14:28:05.814Z"}
           
     f)  Method: DELETE (Delete details of a specific purchase order)
