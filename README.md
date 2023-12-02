@@ -28,8 +28,10 @@ Setup Instructions
 API Endpoints
 1)Registration
     Endpoint: /api/user/
+    
     Method:
         POST: Create a new user account.
+        
     Data:JSON 
         {"username": "string","password": "string","email": "user@example.com"}
 
