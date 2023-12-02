@@ -107,9 +107,9 @@ def update_on_time_delivery_rate(instance,vendor):
                         delivery_record.is_delivered_on_date=True
                         delivery_record.save()
                     else:
-                        DeliveryRecord.objects.create(purchase_order=instance,is_delivered_on_date=True)
+                        DeliveryRecord.objects.create(purchase_order=instance,is_delivered_on_date=True,vendor=vendor)
 
-                delivery_count=DeliveryRecord.objects.filter(is_delivered_on_date=True).count()
+                delivery_count=DeliveryRecord.objects.filter(is_delivered_on_date=True,vendor=vendor).count()
                 new_on_time_delivery_rate = delivery_count / no_completed_pos if no_completed_pos != 0 else 0 
                 print(f"New on_time_delivery_rate: {new_on_time_delivery_rate}")
 
@@ -121,7 +121,7 @@ def update_on_time_delivery_rate(instance,vendor):
                 delivery_record=DeliveryRecord.objects.get(purchase_order=instance)
                 delivery_record.delete()
 
-                delivery_count=DeliveryRecord.objects.filter(is_delivered_on_date=True).count()
+                delivery_count=DeliveryRecord.objects.filter(is_delivered_on_date=True,vendor=vendor).count()
                 new_on_time_delivery_rate = delivery_count / no_completed_pos if no_completed_pos != 0 else 0 
                 print(f"New on_time_delivery_rate: {new_on_time_delivery_rate}")
 
@@ -187,7 +187,7 @@ def update_on_time_delivery_rate_1(instance,vendor):
         no_completed_pos = completed_pos.count() if completed_pos else 0
 
         
-        delivery_count=DeliveryRecord.objects.filter(purchase_order=instance,is_delivered_on_date=True).count()
+        delivery_count=DeliveryRecord.objects.filter(vendor=vendor,is_delivered_on_date=True).count()
 
         new_on_time_delivery_rate = delivery_count / no_completed_pos if no_completed_pos != 0 else 0 
         print(f"New on_time_delivery_rate: {new_on_time_delivery_rate}")

@@ -75,6 +75,7 @@ class HistoricalPerformance(models.Model):
 # For storing Actual Delivery date  
 class DeliveryRecord(models.Model):
     purchase_order=models.ForeignKey(PurchaseOrder,on_delete=models.CASCADE)
+    vendor=models.ForeignKey(Vendor,on_delete=models.CASCADE,null=True)
     is_delivered_on_date=models.BooleanField()
     date=models.DateTimeField(auto_now_add=True)
 
