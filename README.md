@@ -1,6 +1,7 @@
 # Vendor-Management-System
 
 Setup Instructions
+
   -> Create a directory, open cmd in directory path  and clone VendorNexus project
   
       git clone https://github.com/Narjasfathima/VendorNexus.git
@@ -32,8 +33,11 @@ Setup Instructions
       cd VendorNexus
       py manage.py runserver
 
+ ->  The project uses swagger UI, that allows developers to visualize and interact with the APIs (Application Programming Interfaces).
+
 
 API Endpoints
+
 1)Registration
 
     Endpoint: /api/user/
