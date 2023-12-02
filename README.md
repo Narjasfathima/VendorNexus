@@ -20,17 +20,20 @@ Setup Instructions
       venv_name\Scripts\activate       # On Windows           
       source venv_name/bin/activate     # On macOS/Linux
 
+  -> Open VendorNexus in VScode
+ 
+     code .
+
+  -> Open terminal in vscode, navigate to project directory
+
+     cd VendorNexus
+
   -> Install requirements.txt
   
       pip install -r requirements.txt
 
- -> Open VendorNexus in VScode
- 
-     code .
+ -> Run the server and follow link
 
- -> Open terminal in vscode, navigate to project directory, Run the server and follow link
-
-      cd VendorNexus
       py manage.py runserver
 
  ->  The project uses swagger UI, that allows developers to visualize and interact with the APIs (Application Programming Interfaces).
