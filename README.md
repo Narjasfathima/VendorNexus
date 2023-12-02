@@ -27,8 +27,9 @@ Setup Instructions
  
      code .
 
- -> Open terminal in vscode, Run the server and follow link
- 
+ -> Open terminal in vscode, navigate to project directory, Run the server and follow link
+
+      cd VendorNexus
       py manage.py runserver
 
 
