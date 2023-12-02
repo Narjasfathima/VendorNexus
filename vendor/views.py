@@ -189,7 +189,7 @@ class PurchaseOrderViewSet(ViewSet):
             if ser.is_valid():
                 ser.save()
                 return Response({"msg": "Purchase order created"}, status=status.HTTP_201_CREATED)
-            return Response({"msg":ser.errors})
+            return Response({"msg":ser.errors},status=status.HTTP_400_BAD_REQUEST)
         except ValidationError as e:
             return Response({"msg": str(e)}, status=status.HTTP_400_BAD_REQUEST)
         
@@ -311,9 +311,10 @@ class PurchaseOrderViewSet(ViewSet):
             ser = AcknowledgeModelSer(data=request.data, instance=purchase_order)
 
             if ser.is_valid():
-                purchase_order.acknowledgment_date = ser.validated_data.get('acknowledgment_date')
-                purchase_order.save()
-                return Response({"message": "Purchase order acknowledge date is Updated"})
+                # purchase_order.acknowledgment_date = ser.validated_data.get('acknowledgment_date')
+                # purchase_order.save()
+                ser.save()
+                return Response({"message": "Purchase order acknowledge date is Updated"},status=status.HTTP_202_ACCEPTED)
             return Response({"msg": ser.errors})
         
         except PurchaseOrder.DoesNotExist:
@@ -321,3 +322,4 @@ class PurchaseOrderViewSet(ViewSet):
         
         except Exception as e:
             return Response({"msg": "Failed"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
