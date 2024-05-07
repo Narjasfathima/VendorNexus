@@ -180,7 +180,6 @@ def handle_po_delete(sender, instance, **kwargs):
         {"type": "update.metric", "message": "Metrics updated"},
     )
 
-
 def update_on_time_delivery_rate_1(instance,vendor):
     try:            
         completed_pos = PurchaseOrder.objects.filter(vendor=vendor, status='completed')
